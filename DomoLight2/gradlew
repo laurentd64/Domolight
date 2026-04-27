@@ -1,0 +1,7 @@
+#!/bin/sh
+SAVED="`pwd`"
+cd "`dirname \"$0\"`/" >/dev/null
+APP_HOME="`pwd -P`"
+cd "$SAVED" >/dev/null
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+exec "$JAVA_HOME/bin/java" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
